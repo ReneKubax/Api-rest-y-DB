@@ -35,6 +35,21 @@ const buscarUno = async () => {
 //buscarUno()
 
 const actualizar = async () => {
-    const user = await User.findOne({username: 'Pedro'}
+    const user = await User.findOne({username: 'Pedro'})
+    console.log(user)
     user.edad = 30
+    await user.save()
 }
+
+//actualizar()
+ 
+const eliminar = async () => {
+    const user = await User.findOne({username: 'Pedro'})
+    console.log(user)
+    if(user) {
+        await user.remove()
+    }
+    
+}
+
+eliminar()
